@@ -30,14 +30,27 @@
 //二维数组=一维数组的数组（在内存中连续存放）
 
 //——————————————冒泡排序——————————————
-void bubble_sort(int arr[], int sz) {
-	for (size_t i = 0; i < sz - 1; i++)
+void bubble_sort(int arr[], int sz) 
+{
+	int i = 0;
+	for ( i = 0; i < sz - 1; i++)
+	{
+		int flag = 1;//假设数组是排好
 		for (int j = 0; j < sz - 1 - i; j++)/*一趟*/
-			if (arr[j] > arr[j + 1]) {/*交换*/
+		{ 
+			if (arr[j] > arr[j + 1]) /*交换*/
+			{	
 				int tmp = arr[j];
 				arr[j] = arr[j + 1];
 				arr[j + 1] = tmp;
+				flag = 0;//计入
 			}
+		}
+		if (flag == 1)
+		{
+			break;
+		}
+	}
 }
 //int main() {
 //	int arr[] = { 75,94,45,5,26,44,26,8,57,52,61,11,36,9,68,27,45,86,55,15 };
